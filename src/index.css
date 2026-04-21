@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Modern minimal museum — off-white + charcoal + warm accent */
+    --background: 36 25% 97%;
+    --foreground: 20 14% 12%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 20 14% 12%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 20 14% 12%;
+
+    --primary: 20 14% 12%;
+    --primary-foreground: 36 25% 97%;
+
+    --secondary: 36 18% 92%;
+    --secondary-foreground: 20 14% 12%;
+
+    --muted: 36 15% 94%;
+    --muted-foreground: 20 8% 40%;
+
+    --accent: 18 65% 45%;
+    --accent-foreground: 36 25% 97%;
+
+    --destructive: 0 70% 45%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 20 10% 88%;
+    --input: 20 10% 88%;
+    --ring: 18 65% 45%;
+
+    --radius: 0.5rem;
+
+    /* Custom design tokens */
+    --gold: 38 50% 55%;
+    --ink: 20 14% 12%;
+    --paper: 36 25% 97%;
+    --gradient-hero: linear-gradient(180deg, hsl(20 14% 12% / 0) 0%, hsl(20 14% 12% / 0.7) 100%);
+    --gradient-overlay: linear-gradient(135deg, hsl(20 14% 12% / 0.4), hsl(20 14% 12% / 0.8));
+    --shadow-card: 0 1px 2px hsl(20 14% 12% / 0.04), 0 8px 24px hsl(20 14% 12% / 0.06);
+    --shadow-elevated: 0 4px 12px hsl(20 14% 12% / 0.08), 0 24px 48px hsl(20 14% 12% / 0.12);
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 20 14% 8%;
+    --foreground: 36 25% 95%;
+    --card: 20 14% 10%;
+    --card-foreground: 36 25% 95%;
+    --popover: 20 14% 10%;
+    --popover-foreground: 36 25% 95%;
+    --primary: 36 25% 95%;
+    --primary-foreground: 20 14% 8%;
+    --secondary: 20 10% 16%;
+    --secondary-foreground: 36 25% 95%;
+    --muted: 20 10% 16%;
+    --muted-foreground: 36 10% 65%;
+    --accent: 18 65% 55%;
+    --accent-foreground: 20 14% 8%;
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 20 10% 20%;
+    --input: 20 10% 20%;
+    --ring: 18 65% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', sans-serif;
+  }
+  h1, h2, h3, h4, .font-display {
+    font-family: 'Fraunces', serif;
+    font-feature-settings: 'ss01';
+    letter-spacing: -0.02em;
+  }
+}
+
+@layer utilities {
+  .container-narrow {
+    @apply max-w-6xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  .text-balance {
+    text-wrap: balance;
+  }
+  .hover-lift {
+    transition: var(--transition-smooth);
+  }
+  .hover-lift:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-elevated);
+  }
+  
+  @keyframes float {
+    0% { transform: translateY(0px) rotate(1deg) scale(1); }
+    50% { transform: translateY(-12px) rotate(-1deg) scale(1.02); }
+    100% { transform: translateY(0px) rotate(1deg) scale(1); }
+  }
+  .animate-float {
+    animation: float 8s ease-in-out infinite;
+  }
+}
