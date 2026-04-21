@@ -18,7 +18,7 @@ const Ticket = () => {
     const token = localStorage.getItem("token");
     if (!token) return;
 
-    fetch(`http://localhost:5000/api/bookings/${id}`, {
+    fetch(`https://museia.onrender.com/api/bookings/${id}`, {
       headers: { "Authorization": `Bearer ${token}` }
     })
       .then(res => res.json())

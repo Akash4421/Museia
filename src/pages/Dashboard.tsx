@@ -19,7 +19,7 @@ const Dashboard = () => {
       navigate("/auth");
       return;
     }
-    fetch("http://localhost:5000/api/bookings/my-bookings", {
+    fetch("https://museia.onrender.com/api/bookings/my-bookings", {
       headers: { "Authorization": `Bearer ${token}` }
     })
       .then(res => res.json())

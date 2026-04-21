@@ -61,7 +61,7 @@ const Book = () => {
     setPaying(true);
     
     try {
-      const response = await fetch("http://localhost:5000/api/bookings", {
+      const response = await fetch("https://museia.onrender.com/api/bookings", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
